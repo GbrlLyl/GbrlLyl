@@ -2,7 +2,7 @@
 - 👀 I’m interested in web development.
 - 🌱 I’m currently learning electronjs & python.
 - 💞️ I’m looking to collaborate!
-- 📫 How to reach me: @gbrllyl
+- 📫 How to reach me: <br>
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/GbrlLyl)
 <!---
 GbrlLyl/GbrlLyl is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
