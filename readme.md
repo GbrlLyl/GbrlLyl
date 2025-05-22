@@ -32,3 +32,48 @@
 GbrlLyl/GbrlLyl is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+
+
+
+
+Facturama utiliza la autenticación de tipo Basic para poder identificar al usuario que está enviando las peticiones.
+
+> **_⚠️ Importante_**: Para poder usar la API de Facturama, primero deberás crear una cuenta en el ambiente que deseas utilizar. ¿Cómo crear una cuenta en sandbox?
+
+### Generación del token de autenticación
+
+El token se genera al concatenar el _nombre de usuario, dos puntos, contraseña_. Luego esa cadena se deberá convertir a base64. Ejemplo: 
+
+*   Si mi nombre de usuario es **_`pruebas`_** y mi contraseña es **_`pruebas2011`_**, la concatenación queda como **_`pruebas:pruebas2011`_**
+*   El resultado del paso anterior se convierte a _base64_. Para este ejemplo, la conversión resulta en **_`cHJ1ZWJhczpwcnVlYmFzMjAxMQ==`_**.
+*   Se agrega el header de autenticación tipo `Basic`, y se especifica el token creado en el paso anterior. Ejemplo:  
+    `**_Authorization: Basic cHJ1ZWJhczpwcnVlYmFzMjAxMQ==_**`
+
+El token solo se para algunos de los _SDK_, como el de _**JavaScript**_ o _**Node**_. Para los otros _SDK_ y para _Postman_ solo es necesario colocar el usuario y contraseña donde se requiera, especificando autentificación de tipo `Basic`.
+
+#### Ejemplo para el SDK de JavaScript
+
+var valuesFacturama = {
+    useragent: "tu\_nombre\_de\_usuario",
+    token: "tu\_token",
+    url: "https://apisandbox.facturama.mx/"     // URL del ambiente
+};
+
+#### Ejemplo para el SDK de Node
+
+var valuesFacturama = {
+    token: "tu\_token",
+    url: "https://apisandbox.facturama.mx/",    // URL del ambiente
+    user: 'tu\_nombre\_de\_usuario',
+    pass: 'tu\_contraseña'
+};
+
+#### Ejemplo para Postman
+
+![](https://cdn.elev.io/file/uploads/GMmWbjNkwx_4xETR7KjSJNkYai4UVRsw7WzUfwzPgZk/lml8binCNzp8NUHugE6jwakJ4W90mHug7BvSKN2VgTM/1747952099242-_CM.png)
+
+#### Para otros SDK
+
+Puedes encontrar cómo autenticarte en el resto de _SDK_ en la wiki de cada uno de los repositorios, especificando tu nombre de usuario y contraseña. 
+
+*   GitHub de Facturama: [https://github.com/Facturama](https://github.com/Facturama)
